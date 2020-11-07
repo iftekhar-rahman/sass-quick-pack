@@ -1,5 +1,14 @@
 jQuery(document).ready(function($){
 
+    // Sticky Header with smooth animation
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() >= 300) {
+            $('.header-area').addClass('fixed');
+        } else {
+            $('.header-area').removeClass('fixed');
+        }
+    })
+
     // $(".header-area").sticky({ topSpacing: 0 });
 
     // $('select').niceSelect();
@@ -32,38 +41,39 @@ jQuery(document).ready(function($){
     // });
 
 
-    // $(".logo-carousel-wrap").owlCarousel({
-    //     items: 5,
+    // $(".hero-slider").owlCarousel({
+    //     items: 3,
+    //     center: true,
     //     loop: true,
     //     nav: false,
     //     dots: false,
     //     autoplay: false,
-    //     margin: 15,
+    //     margin: 0,
     //     navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 2,
-    //             margin: 15,
-    //             nav: false
-    //         },
-    //         580: {
-    //             items: 3,
-    //             margin: 3,
-    //             nav: false
-    //         },
-    //         720: {
-    //             items: 4,
-    //             margin: 3,
-    //             nav: false
-    //         },
-    //         960: {
-    //             items: 5
-    //         },
-    //         1140: {
-    //             items: 6
-    //         }
+    //     // responsive: {
+    //     //     0: {
+    //     //         items: 2,
+    //     //         margin: 15,
+    //     //         nav: false
+    //     //     },
+    //     //     580: {
+    //     //         items: 3,
+    //     //         margin: 3,
+    //     //         nav: false
+    //     //     },
+    //     //     720: {
+    //     //         items: 4,
+    //     //         margin: 3,
+    //     //         nav: false
+    //     //     },
+    //     //     960: {
+    //     //         items: 5
+    //     //     },
+    //     //     1140: {
+    //     //         items: 6
+    //     //     }
 
-    //     }
+    //     // }
     // });
 
     // $(".feature-carousel-wrap").owlCarousel({
@@ -111,6 +121,20 @@ jQuery(document).ready(function($){
     //     }
 	// });
 
+    // Scroll To Top starts
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 500) {
+            $('.scrollTop').addClass('scrollBtn');
+        } else {
+            $('.scrollTop').removeClass('scrollBtn');
+        }
+    });
+    $(".scrollTop").click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    }); // click() scroll top ENDS
 
 
 
