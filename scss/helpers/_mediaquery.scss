@@ -124,10 +124,17 @@
 }
 
 @mixin extra-large-desktops {
-    @media(min-width: 1600px) {
+    @media(min-width: 1500px) {
         @content;
     }
 }
+
+@mixin xx-large-desktops {
+    @media(min-width: 2000px) {
+        @content;
+    }
+}
+
 @mixin till-desktop {
     @media (min-width: 320px) and (max-width:992px) {
         @content;
